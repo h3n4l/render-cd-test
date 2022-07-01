@@ -23,6 +23,6 @@ jobs:
                 --data '
                 {
                    "autoDeploy": "yes",
-                   "branch": "${{ env.RELEASE_VERSION }}"
+                   "branch": "${GITHUB_REF_NAME}"
                 }
                 '
