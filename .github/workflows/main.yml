@@ -16,9 +16,9 @@ jobs:
       - name: Update render web service
         run: |
           curl  --request PATCH \
-                --url https://api.render.com/v1/services/${{ secret.SERVICE_ID }} \
+                --url https://api.render.com/v1/services/${{ secrets.SERVICE_ID }} \
                 --header 'Accept: application/json' \
-                --header 'Authorization: Bearer ${{ secret.RENDER_API_KEY }}' \
+                --header 'Authorization: Bearer ${{ secrets.RENDER_API_KEY }}' \
                 --header 'Content-Type: application/json' \
                 --data '
                 {
