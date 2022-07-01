@@ -23,6 +23,6 @@ jobs:
                 --data '
                 {
                    "autoDeploy": "yes",
-                   "branch": "${GITHUB_REF_NAME}"
+                   "branch": "${ GITHUB_REF_NAME }"
                 }
                 '
