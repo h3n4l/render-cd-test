@@ -20,7 +20,7 @@ jobs:
                 -o /dev/null \
                 --url https://api.render.com/v1/services/${{ secrets.SERVICE_ID }} \
                 --header 'Accept: application/json' \
-                --header 'Authorization: Bearer ${{ secrets.RENDER_API_KEY }}' \
+                --header 'Authorization: Bearer 123123' \
                 --header 'Content-Type: application/json' \
                 --data '
                 {
