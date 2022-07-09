@@ -29,7 +29,7 @@ jobs:
                 '
               )
           echo ${RENDER_RESPONSE}
-          if [[ "$(echo -e ${RENDER_RESPONSE} | tail -c 3)" != "200" ]]; then
-            echo $(echo -e ${RENDER_RESPONSE} | tail -c 3)
+          if [[ "$(echo -e ${RENDER_RESPONSE} | tail -c 4)" != "200" ]]; then
+            echo $(echo -e ${RENDER_RESPONSE} | tail -c 4)
             exit 1
           fi
