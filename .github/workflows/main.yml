@@ -16,7 +16,7 @@ jobs:
       - name: Update render web service
         run: |
           export RENDER_RESPONSE=$(curl --request PATCH \
-                -w "%{http_code}" \
+                -w "\n%{http_code}" \
                 --url https://api.render.com/v1/services/${{ secrets.SERVICE_ID }} \
                 --header 'Accept: application/json' \
                 --header 'Authorization: Bearer ${{ secrets.RENDER_API_KEY }}' \
@@ -29,7 +29,7 @@ jobs:
                 '
               )
           echo ${RENDER_RESPONSE}
-          if [[ "$(echo -e ${RENDER_RESPONSE} | tail -c 4)" != "200" ]]; then
-            echo $(echo -e ${RENDER_RESPONSE} | tail -c 4)
+          if [[ "$(echo -e ${RENDER_RESPONSE} | tail -n 1)" != "200" ]]; then
+            echo $(echo -e ${RENDER_RESPONSE} | tail -n 1)
             exit 1
           fi
